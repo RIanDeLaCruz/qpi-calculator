@@ -11,7 +11,7 @@
                     <ion-item ng-repeat="subject in qpiCtrl.subjects"
                               item="subject"
                               class="item-remove-animate">
-                        <span ng-bind="subject.title"></span>&nbsp;|&nbsp;<span ng-bind="subject.grade"></span>
+                        <span ng-bind="subject.title"></span>&nbsp;|&nbsp;<span>{{subject.grade | displayLetter}}</span>
                         <ion-delete-button class="ion-minus-circled"
                                            ng-click="qpiCtrl.onItemDelete(subject)">
                         </ion-delete-button>
@@ -20,7 +20,7 @@
                 </ion-list>
             </div>
         </div>
-        <p class="text-center">{{qpiCtrl.final}}</p>
+        <p class="text-center">QPI:&nbsp; {{qpiCtrl.final|number:2}}</p>
 
         <form>
             <div class="row responsive-lg">
