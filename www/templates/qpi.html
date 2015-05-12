@@ -1,0 +1,50 @@
+<ion-view view-title="QPICalculator">
+    <ion-content>
+        <h1 class="title text-center">QPI Calculator</h1>
+        <!--<ul ng-repeat="subject in qpiCtrl.subjects">-->
+        <!--<li>{{subject.title}} | {{subject.grade}}</li>-->
+        <!--</ul>-->
+        <div class="row">
+            <ion-list class="col-50 col-offset-25" show-delete="qpiCtrl.showDelete">
+                <ion-item item="subject" ng-repeat="subject in qpiCtrl.subjects">
+                    <span ng-bind="subject.title"></span>
+                    |
+                    <span ng-bind="subject.grade"></span>
+                </ion-item>
+            </ion-list>
+        </div>
+
+        <p class="text-center">{{qpiCtrl.final}}</p>
+        <form>
+            <div class="row responsive-lg">
+                <label class="item item-input col-50 col-offset-25" for="subject">
+                    <span class="item-label">Subject:&nbsp</span>
+                    <input type="text" ng-model="qpiCtrl.subject.title" name="subject" id="subject" placeholder="Subject">
+                </label>
+            </div>
+            <div class="row responsive-lg">
+                <label class="item item-input item-select col-50 col-offset-25" for="grade">
+                    <span class="input-label">Grade:</span>
+                    <select id="grade" name="grade" ng-model="qpiCtrl.subject.grade">
+                        <option value="4">A</option>
+                        <option value="3.5">B+</option>
+                        <option value="3">B</option>
+                        <option value="2.5">C+</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">F</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row responsive-lg">
+                <label class="item item-input col-50 col-offset-25" for="units">
+                    <span class="input-label">Number of Units:</span>
+                    <input type="number" ng-model="qpiCtrl.subject.units" name="units" id="units" placeholder="Number of units" step="1" min="1" max="6">
+                </label>
+            </div>
+            <div>
+                <input type="submit" class="button button-positive bar col-50 col-offset-25" value="Add Subject" ng-click="qpiCtrl.addSubject()">
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
