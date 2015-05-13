@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
-    .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+    .controller('AppCtrl', function($scope, $ionicModal, $timeout, $cordovaInAppBrowser) {
         // Form data for the login modal
         $scope.loginData = {};
 
@@ -31,6 +31,13 @@ angular.module('starter.controllers', [])
                 $scope.closeLogin();
             }, 1000);
         };
+
+        var options = {
+            location: 'yes',
+            clearcache: 'yes',
+            toolbar: 'yes'
+        };
+        $scope.openAISIS = function(){$cordovaInAppBrowser.open("https://aisis.ateneo.edu", "_self", options);}
     })
 
     .controller('PlaylistsCtrl', function($scope) {
