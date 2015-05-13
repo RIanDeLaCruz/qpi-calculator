@@ -34,10 +34,13 @@ angular.module('starter.controllers', ['ngCordova'])
 
         var options = {
             location: 'yes',
-            clearcache: 'yes',
-            toolbar: 'yes'
+            clearcache: 'yes'
         };
-        $scope.openAISIS = function(){$cordovaInAppBrowser.open("https://aisis.ateneo.edu", "_self", options);}
+        $scope.openAISIS = function(){
+            $cordovaInAppBrowser.open("http://mirrors.aisis.ateneo.edu/", "_system", options);
+
+            $cordovaInAppBrowser.close();
+        }
     })
 
     .controller('PlaylistsCtrl', function($scope) {
@@ -84,5 +87,6 @@ angular.module('starter.controllers', ['ngCordova'])
         self.onItemDelete = function(item) {
             console.log(item.title);
             self.subjects.splice(self.subjects.indexOf(item), 1);
+            self.final = self.calc();
         };
     });
