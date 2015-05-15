@@ -1,5 +1,5 @@
-<ion-view view-title="QPICalculator">
-    <ion-content>
+<ion-view>
+    <ion-content overflow-scroll="true" class="padding-vertical">
         <h1 class="title text-center">QPI Calculator</h1>
 
         <div class="row">
@@ -51,10 +51,11 @@
                            placeholder="Number of units" step="1" min="1" max="6">
                 </label>
             </div>
-            <div>
-                <input type="submit" class="button button-positive bar col-50 col-offset-25" value="Add Subject"
+            <div class="col-50 col-offset-25">
+                <input type="submit" class="button button-positive bar" value="Add Subject"
                        ng-click="qpiCtrl.addSubject()">
             </div>
         </form>
+
     </ion-content>
 </ion-view>
