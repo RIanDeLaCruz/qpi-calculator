@@ -33,7 +33,7 @@
             <div class="row responsive-lg">
                 <label class="item item-input item-select col-50 col-offset-25" for="grade">
                     <span class="input-label">Grade:</span>
-                    <select id="grade" name="grade" ng-model="qpiCtrl.subject.grade">
+                    <select id="grade" name="grade" ng-model="qpiCtrl.subject.grade" required>
                         <option value="4">A</option>
                         <option value="3.5">B+</option>
                         <option value="3">B</option>
@@ -45,15 +45,24 @@
                 </label>
             </div>
             <div class="row responsive-lg">
-                <label class="item item-input col-50 col-offset-25" for="units">
+                <label class="item item-input item-select col-50 col-offset-25" for="units">
                     <span class="input-label">Number of Units:</span>
-                    <input type="number" ng-model="qpiCtrl.subject.units" name="units" id="units"
-                           placeholder="Number of units" step="1" min="1" max="6">
+                    <!--<input type="number" ng-model="qpiCtrl.subject.units" name="units" id="units"-->
+                           <!--placeholder="Number of units" step="1" min="1" max="6">-->
+                    <select id="units" ng-model="qpiCtrl.subject.units" name="units" required>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
                 </label>
             </div>
             <div class="col-50 col-offset-25">
                 <input type="submit" class="button button-positive bar" value="Add Subject"
                        ng-click="qpiCtrl.addSubject()">
+                <button class="button bar icon ion-edit icon-left">Edit</button>
             </div>
         </form>
 
