@@ -68,9 +68,12 @@ angular.module('starter.controllers', ['ngCordova'])
             var totalGrade = 0;
             var totalUnits = 0;
             for(var i = 0; i < self.subjects.length; i++){
-                totalGrade += (self.subjects[i].grade*self.subjects[i].units);
-                totalUnits += self.subjects[i].units;
+                var numericGrade = parseInt(self.subjects[i].units);
+                totalGrade += (self.subjects[i].grade*numericGrade);
+                totalUnits += numericGrade;
             }
+            console.log(totalGrade+' total grade');
+            console.log(totalUnits+' total units');
             return (totalGrade/totalUnits);
         };
 
