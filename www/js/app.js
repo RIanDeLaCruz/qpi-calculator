@@ -80,6 +80,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
                 }
 
             })
+            .state('app.gradecalc', {
+                url: "/gradecalc",
+                views: {
+                    "menuContent":{
+                        templateUrl: "templates/delete.html",
+                        controller: "deleteController as delCtrl"
+                    }
+                }
+            })
             .state('app.delete', {
                 url: "/delete",
                 views: {
