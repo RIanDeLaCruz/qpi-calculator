@@ -1,0 +1,31 @@
+<ion-view>
+    <ion-content>
+        <h1>Grade Calculator</h1>
+
+        <div class="row">
+            <div class="col-50 col-offset-25">
+                <ion-list class="col-50 col-offset-25" show-delete="gradeCalcCtrl.data.showDelete" show-reorder="gradeCalcCtrl.data.showReorder" can-swipe="listCanSwipe">
+                    <ion-item ng-repeat="rubric in gradeCalcCtrl.rubrics" item="rubric" class="item-remove-animate">
+                        <span ng-bind="rubric.title"></span><br>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Raw</th>
+                                    <th>HPS</th>
+                                    <th>%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ng-bind="rubric.raw"></td>
+                                    <td ng-bind="rubric.hps"></td>
+                                    <td ng-bind="rubric.percentage"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
